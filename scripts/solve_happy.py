@@ -1,33 +1,37 @@
 import sys
 import time
-import ctypes
+from pathlib import Path
 
-sys.path.insert(0, r'C:\Users\Administrator\Desktop\windsurf\apps\coloring_pixels_bot')
+sys.path.insert(0, str(Path(__file__).parent.parent))
 import pydirectinput
 from process.memory_reader import MemoryReader
 from process.grid_reader import GridReader
 from process.vision import Vision
 from process.input_controller import InputController
+from process.window_manager import WindowManager
 
 pydirectinput.FAILSAFE = False
 pydirectinput.PAUSE = 0
 
 
 def main():
-    hwnd = ctypes.windll.user32.FindWindowW(None, 'ColoringPixels')
-    ctypes.windll.user32.SetForegroundWindow(hwnd)
+    wm = WindowManager()
+    wm.update_rect()
+    wm.focus()
     time.sleep(0.3)
 
-    mr = MemoryReader('ColoringPixels.exe')
+    rect = wm.client_rect()
+
+    mr = MemoryReader(process_name='ColoringPixels.exe')
     gr = GridReader(mr)
     info = gr.read_grids()
     print('grid', info['x_max'], info['y_max'])
 
-    v = Vision((0, 0, 1920, 1080))
+    v = Vision(rect)
     mapping, dx, dy = v.build_grid_mapping(info['saved'], info['main'])
     print('mapping', len(mapping), 'spacing', dx, dy)
 
-    ctrl = InputController((0, 0, 1920, 1080))
+    ctrl = InputController(rect)
 
     def select_color(c):
         pydirectinput.keyDown('shift')

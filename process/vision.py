@@ -319,7 +319,7 @@ if __name__ == "__main__":
     r = MemoryReader(process_name="ColoringPixels.exe")
     gr = GridReader(r)
     info = gr.read_grids()
-    vis = Vision((120, 26, 1680, 1050))
+    vis = Vision((0, 0, 1920, 1080))
     cells = vis.detect_uncolored_cells()
     print("detected cells", len(cells))
     mapping, dx, dy = vis.build_grid_mapping(info["saved"], info["main"])

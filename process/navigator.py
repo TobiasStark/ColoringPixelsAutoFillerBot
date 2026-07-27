@@ -41,7 +41,8 @@ class Navigator:
         self.reader = MemoryReader(process_name="ColoringPixels.exe")
         self.grid = GridReader(self.reader)
         self.level_base = 0
-        self.levels_data = json.load(open(Path(__file__).parent.parent / "data" / "levels.json"))
+        with open(Path(__file__).parent.parent / "data" / "levels.json") as f:
+            self.levels_data = json.load(f)
         # Sidebar order: the game sorts books by bookType then bookIndex.
         type_order = {"None": 0, "Free": 1, "Bonus": 2, "DLC": 3, "Reward": 4}
         sorted_books = sorted(

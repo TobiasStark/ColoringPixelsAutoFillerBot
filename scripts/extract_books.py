@@ -4,7 +4,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import config
 import UnityPy
 
-env = UnityPy.AssetsManager(str(config.GAME_DIR / "ColoringPixels_Data"))
+env = UnityPy.load(str(config.GAME_DIR / "ColoringPixels_Data"))
 
 # find a BookDetails asset
 book = None

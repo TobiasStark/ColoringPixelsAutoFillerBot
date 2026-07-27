@@ -13,8 +13,8 @@ PROCESS_NAME = "ColoringPixels"
 WINDOW_TITLE = "ColoringPixels"
 
 # Display settings
-WINDOW_WIDTH = 1680
-WINDOW_HEIGHT = 1050
+WINDOW_WIDTH = 1920
+WINDOW_HEIGHT = 1080
 
 # UI y-coordinate cutoff for palette (from ClickTest yCuttoff ~140 * canvas scale)
 PALETTE_Y_CUTOFF = 155

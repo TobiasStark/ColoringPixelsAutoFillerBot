@@ -7,3 +7,4 @@ dnfile>=0.9
 pydirectinput>=1.0
 opencv-python>=4.7
 pytesseract>=0.3
+UnityPy>=1.9

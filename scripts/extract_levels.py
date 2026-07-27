@@ -129,7 +129,7 @@ def _book_type_name(value):
 def main():
     out = {}
     resources_path = assets_dir / "resources.assets"
-    env = UnityPy.AssetsManager(str(resources_path))
+    env = UnityPy.load(str(resources_path))
     for obj in env.objects:
         if obj.type.name != "MonoBehaviour":
             continue

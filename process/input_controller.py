@@ -143,12 +143,12 @@ if __name__ == "__main__":
     gr = GridReader(r)
     info = gr.read_grids()
     print("main sample", info["main"][3][3], "saved sample", info["saved"][3][3])
-    ctrl = InputController((120, 26, 1680, 1050))
+    ctrl = InputController((0, 0, 1920, 1080))
     # click center of window to focus
     ctrl.click(840, 525)
     # select color 2 and click a known uncolored cell mapped by vision
     from process.vision import Vision
-    vis = Vision((120, 26, 1680, 1050))
+    vis = Vision((0, 0, 1920, 1080))
     mapping, dx, dy = vis.build_grid_mapping(info["saved"], info["main"])
     for (x, y), (cx, cy) in mapping.items():
         if main := info["main"][y][x]:
