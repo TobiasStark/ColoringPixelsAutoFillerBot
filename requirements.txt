@@ -1,0 +1,9 @@
+pymem>=1.2
+psutil>=5.9
+numpy>=1.24
+Pillow>=9.0
+mss>=7.0
+dnfile>=0.9
+pydirectinput>=1.0
+opencv-python>=4.7
+pytesseract>=0.3
