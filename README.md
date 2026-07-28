@@ -2,6 +2,8 @@
 
 A bot that automatically solves levels in the Steam game **Coloring Pixels**. It reads the game's grid data directly from process memory, detects uncolored cells on screen via OpenCV vision, and clicks them with the correct color — no manual clicking required.
 
+![Coloring Pixels Auto-Filler Demo](colorpixelgif.gif)
+
 ---
 
 ## Prerequisites
