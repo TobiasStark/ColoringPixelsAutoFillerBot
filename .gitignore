@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Runtime data (screenshots, game DLLs, large JSON, calibration caches)
+data/
+
+# Logs
+logs/
+*.log
+
+# External cloned repos (have their own .git)
+external/
+
+# Decompiled game source (generated from Assembly-CSharp.dll)
+src_decompiled/
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Environment / secrets
+.env
+*.local
